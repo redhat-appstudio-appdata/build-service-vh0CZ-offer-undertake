@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: build-service-7o7y
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: build-service-7o7y
+    app.kubernetes.io/part-of: build-service
+  name: build-service-7o7y
+  namespace: rhn-support-bpimente-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: build-service-7o7y
+    weight: 100
+status: {}
