@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: build-service-7o7y
+  namespace: rhn-support-bpimente-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:f0c4dea63358906e7cc6e2df94a9ef23f9c82b1bf68d5da1e705d8eb13ca7b05
+        name: container-image
+        resources: {}
+status: {}
