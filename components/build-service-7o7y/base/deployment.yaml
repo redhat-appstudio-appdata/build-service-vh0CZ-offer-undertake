@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: build-service-7o7y
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:rhn-support-bpimente-tenant-build-service-7o7y
+      - image: quay.io/redhat-appstudio/user-workload@sha256:f0c4dea63358906e7cc6e2df94a9ef23f9c82b1bf68d5da1e705d8eb13ca7b05
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 8080
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 50Mi
